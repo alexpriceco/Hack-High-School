@@ -1,10 +1,44 @@
+/* variables */
 $black: #262626;
 $white: #F7F7F7;
 $gray-l: #ABABAB;
 $gray-d: #525252;
 $mark-l: #5F96D9;
 $mark-d: #4771A3;
+/* ======= */
 
+/* mixins */
+@mixin transition100ms() {
+    -webkit-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -moz-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    -o-transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+    transition: all 100ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+}
+@mixin bob() {
+    transform-origin: right center;
+    animation: bob 0.8s infinite ease-in-out forwards alternate;
+}
+/* ======= */
+
+/* keyframes */
+@keyframes bob {
+    0%{ transform: translateY(0); }
+    100% { transform: translateY(.3em); }
+}
+/* ====== */
+
+
+/*  menu  */
+//
+//  1 - main
+//  2 - filters
+//  3 - cards
+//  x - responsive breakpoints
+//  z - misc
+//
+/* ====== */
+
+/* 1 - main */
 html, body {
     font-family: Hack, monospace;
     background-color: $white;
@@ -31,4 +65,44 @@ footer {
     color: $gray-l;
     padding:2em;
 }
-//need breakpoints for desktop
+a, a:visited {
+    text-decoration: none;
+    color:$white;
+    @include transition100ms();
+}
+a:hover {
+    color: $gray-l;
+}
+.hidden {
+    display:none;
+}
+/* ======= */
+
+/* 2 - filters */
+nav.filter-menu {
+    background-color: $gray-l;
+    color: $black;
+}
+.toggle-filters {
+    padding:2em;
+    cursor: pointer;
+    @include transition100ms();
+}
+.toggle-filters:hover {
+    color:$gray-d;
+}
+/* ======= */
+
+/* 3 - cards */
+/* ======= */
+
+/* x - responsive breakpoints */
+/* ======= */
+
+/* z - misc */
+.fa-chevron-down.large-icon {
+    font-size: 2em;
+    padding:2em;
+    @include bob();
+}
+/* ======= */
