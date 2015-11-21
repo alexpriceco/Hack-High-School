@@ -1,0 +1,34 @@
+$black: #262626;
+$white: #F7F7F7;
+$gray-l: #ABABAB;
+$gray-d: #525252;
+$mark-l: #5F96D9;
+$mark-d: #4771A3;
+
+html, body {
+    font-family: Hack, monospace;
+    background-color: $white;
+    color:$black;
+    text-align: center;
+}
+section.hero {
+    height:90vh;
+    width:80%;
+    margin: 0 auto;
+    display:table;
+}
+.v-align {
+    display:table-cell;
+    vertical-align: middle;
+}
+section.cards {
+    background-color: $black;
+    color: $white;
+    padding:2em;
+}
+footer {
+    background-color: $black;
+    color: $gray-l;
+    padding:2em;
+}
+//need breakpoints for desktop
