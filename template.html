@@ -1,3 +1,4 @@
+<div id="cardWrapper">
 <div class="card" id="{{unique_identifier}}">
     <div class="glance">
         <div class="event-image" style="background-image: url({{image_url}}); background-position:center; background-size: 100px auto; background-repeat: no-repeat;"></div>
@@ -6,7 +7,7 @@
                 <i class="fa fa-arrow-up"></i>
                 <span class="upvotes">{{upvotes}}</span>
                 <h3>{{event_title}}</h3>
-                <div class="sharable">
+                <div class="upper-share sharable">
                     <a href="{{share_url}}"><i class="fa fa-share-alt"></i></a>
                     <a href="{{signup_url}}"><i class="fa fa-link"></i></a>
                 </div>
@@ -14,11 +15,11 @@
             </div>
             <div class="bottom-row">
                 <i class="fa fa-map-marker"></i>
-                <span class="location-city">{{location.city}},</span>
-                <span class="location-state">{{location.state}}</span>
+                <span class="location-city">{{city}},</span>
+                <span class="location-state">{{state}}</span>
                 <span class="divider">/</span>
                 <span class="dates">
-                    {{date.start.month}} {{date.start.day}} - {{date.end.month}} {{date.end.day}}
+                    {{start-date}} - {{end-date}}
                 </span>
             </div>
         </div>
@@ -37,4 +38,5 @@
             <a href="{{signup_url}}"><i class="fa fa-link"></i> signup</a>
         </div>
     </div>
+</div>
 </div>

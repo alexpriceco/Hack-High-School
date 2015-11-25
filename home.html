@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="css/min/main.css">
         <link rel="stylesheet" href="css/min/fontawesome/font-awesome.css">
         <link rel="stylesheet" href="css/min/hack.min.css">
+
+
+
+
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -37,8 +41,9 @@
             </div>
         </nav>
 
-        <section class="cards">
+        <section class="cards" id="cards">
         </section>
+        <div id="templates" style="display:none"></div>
 
         <footer>Proudly built using
             <a href="http://fontawesome.io">Font Awesome</a>,
@@ -48,6 +53,7 @@
         </footer>
 
         <script src="js/jquery.min.js"></script>
+        <script src="js/mustache.min.js"></script>
         <script src="js/card-insertion.min.js"></script>
         <script src="js/main.js"></script>
         <script>
@@ -65,6 +71,32 @@
             //card-insertion();
             console.log("Heyyo!");
         })
+        </script>
+        <script>
+        $(document).ready(function(){
+            var sampleData = {
+                "unique_identifier": "eventID"+1,
+                "image_url": "images/sample.jpg",
+                "upvotes": 32,
+                "event_title": "sample event",
+                "share_url": "http://twitter.com/",
+                "signup_url": "#",
+                "city": "austin",
+                "state": "tx",
+                "start-date": "jan 12",
+                "end-date": "jan 13",
+                "description": "example description is here need more lorem ipsum and no other bullshit wow",
+                "countdown": 33,
+                "travel-cover": 0,
+                "prize-money": 0
+            }
+
+            $("#templates").load("template.html",function(){
+              var template = document.getElementById('cardWrapper').innerHTML; //appends to cardslist
+              var output = Mustache.render(template, sampleData);
+              $(".cards").append(output);
+            });
+        });
         </script>
     </body>
 </html>

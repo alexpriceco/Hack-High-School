@@ -30,6 +30,8 @@ $mark-d: #4771A3;
 
 /*  menu  */
 //
+//  important notes are shown with (!)
+//
 //  1 - main
 //  2 - filters
 //  3 - cards
@@ -94,6 +96,37 @@ nav.filter-menu {
 /* ======= */
 
 /* 3 - cards */
+.card {
+    background-color:$white;
+    color:$black;
+    margin: 1em;
+    text-align: left;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(53, 61, 67, 0.3);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(53, 61, 67, 0.3);
+    box-shadow: 0px 5px 10px 0px rgba(53, 61, 67, 0.3);
+}
+.card a, .card a:visited {
+  color: $gray-d;
+}
+
+.card a:hover {
+  color: $gray-l;
+}
+.card h3, .card .sharable, .card .more-info {
+    display:inline-block;
+    margin: 0;
+}
+.details {
+    display:none;
+    background-color: $gray-l;
+    padding: 2em 2em 0 2em;
+}
+.dates {
+    text-transform: uppercase;
+}
+hr.invisible {
+    display:none; // (!) make sure to toggle this when details are displayed
+}
 /* ======= */
 
 /* x - responsive breakpoints */
@@ -104,5 +137,9 @@ nav.filter-menu {
     font-size: 2em;
     padding:2em;
     @include bob();
+}
+.divider {
+    color:$gray-l;
+    padding: 0 1em;
 }
 /* ======= */
