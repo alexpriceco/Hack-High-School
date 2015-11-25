@@ -8,9 +8,14 @@ $( '.toggle-filters' ).click(function() {
 });
 
 //expands cards on mobile
-$('.card').click(function() {
+$(document).on('click', '.card', function(){
     $("#"+this.id).find('.details').slideToggle('normal');
-    $("#"+this.id).find('.upper-share').slideToggle('normal');
+    $("#"+this.id).find('.upper-share').children().toggleClass('hidden-icons');
+    $("#"+this.id).find('.fa-chevron-down').toggleClass('fa-rotate-180');
+});
+
+
+$(document).on('mouseover mouseout', '.card', function(){
     $("#"+this.id).find('.fa-chevron-down').toggleClass('fa-rotate-180');
 });
 
